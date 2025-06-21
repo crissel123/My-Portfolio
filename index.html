@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crisselmae - IT STUDENT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #c7a9c4;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #8e206b;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+
+
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+
+    nav ul li a.active {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+
+
+
+
+    section {
+      padding: 60px 20px;
+      min-height: 80vh;
+      align-items: center;
+    }
+
+
+
+
+
+
+
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+
+    .hero-text {
+      max-width: 500px;
+      font-size: 40px;
+      color: #101212;
+      margin-bottom: 10px;
+    }
+
+
+    .hero-text h1 span {
+      color: #962273;
+    }
+
+
+   
+
+
+
+
+    .about-btn {
+      background-color: #240046;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+
+    .about-btn:hover {
+      background-color: #3a0ca3;
+    }
+
+
+
+
+
+
+
+
+    .hero-img {
+      background-color: #974a81;
+      border-radius: 50%;
+      padding: 30px;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .hero-img img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+
+
+
+
+
+
+
+    .socials {
+      display: flex;
+      justify-content: start;
+      gap: 15px;
+    }
+
+
+    .socials a {
+      font-size: 20px;
+      color: #fff;
+      background: #894788;
+      padding: 10px;
+      border-radius: 50%;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+
+    .socials a:hover {
+      background: #fff;
+      color: #b62eaf;
+    }
+
+
+
+
+
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+
+
+
+    h3 {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+
+   
+
+
+
+
+
+
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+      font-size: 18px;
+      border: none;
+      background-color: #537dd1;
+      color: white;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 50%;
+    }
+
+
+    .hidden {
+      display: none;
+    }
+
+
+
+
+
+
+
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+    .about-container img.profile-pic {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #81208e;
+    }
+
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+
+
+
+
+
+   
+  .skills-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+
+.skills-column {
+  width: 200px;
+}
+
+
+
+
+
+
+.project-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.project-card p {
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+
+
+
+.projects-block-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+
+.project-block-item {
+  width: 300px;
+  text-align: center;
+}
+
+
+.project-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.hidden-img {
+  display: none;
+}
+
+
+
+
+
+
+ 
+
+
+    .contact-title {
+  text-align: center;
+}
+
+
+.contact-form {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+
+ 
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+  <header>
+
+
+
+
+
+
+
+
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection(event, 'home')" class="active">Home</a></li>
+        <li><a href="#" onclick="showSection(event, 'about')">About</a></li>
+        <li><a href="#" onclick="showSection(event, 'skills')">Skills</a></li>
+        <li><a href="#" onclick="showSection(event, 'project')">Project</a></li>
+        <li><a href="#" onclick="showSection(event, 'contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+
+  <!-- HERO SECTION -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Hi, <br>I’m <span>Crisselmae</span><br>IT STUDENT</h1>
+        <button class="about-btn" onclick="showSection(event, 'about')">About Me <i class="fas fa-arrow-right"></i></button>
+        <div class="socials">
+          <a href="https://www.facebook.com/cris.sel.658784" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/crissel143" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/crisselmae123" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="images/image1.jpg" alt="Crisselmae Photo">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="hidden">
+    <div class="about-container">
+      <img src="images/image2.jpg" alt="Crisselmae Inao" class="profile-pic" />
+      <div class="about-text">
+        <h2 class="name">CRISSELMAE P. INAO</h2>
+        <p class="bio">
+          I am an IT student at Asian College. I study computers, coding, and how to keep data safe. I want to get an internship to learn more and start a career in technology.
+        </p>
+        <div class="education-section">
+          <h3>Education</h3>
+          <div><h4>Tertiary (2023 – Present)</h4><p>Asian College, Dumaguete City</p></div>
+          <div><h4>Senior High School (2020 – 2021)</h4><p>Mabinay Senior High School</p></div>
+          <div><h4>Elementary (2013 – 2014)</h4><p>Himocdungon Elementary School</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+<!-- SKILLS -->
+<section id="skills" class="hidden">
+  <h2 class="skills-title">Skills</h2>
+  <div class="skills-container">
+    <div class="skills-column">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Good Communication</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+        <li>Decision Making</li>
+        <li>Organization</li>
+        <li>Teamwork</li>
+      </ul>
+    </div>
+    <div class="skills-column">
+      <h3>Hard Skills</h3>
+      <ul>
+        <li>Database Management</li>
+        <li>Operating System</li>
+        <li>Programming (C++, JavaScript)</li>
+        <li>Photopea</li>
+        <li>Figma</li>
+        <li>Wireframe</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section id="project" class="hidden">
+  <h2 class="project-title">Projects</h2>
+  <div class="projects-block-container">
+
+
+    <div class="project-block-item">
+      <h3>Prototype (Figma)</h3>
+      <p>This is a mobile UI wireframe prototype created in <strong>Figma</strong>. It features a clean, user-friendly layout for a basic app interface, showcasing screens with navigation flow, input fields, and button interactions.</p>
+      <button onclick="toggleImage(this)">View My Work</button>
+      <img src="images/Figma.png" alt="Figma Wireframe" class="project-image hidden-img">
+    </div>
+
+
+    <div class="project-block-item">
+      <h3>Flyer Fashion (Photopea)</h3>
+      <p>This is a modern and eye-catching fashion flyer created using <strong>Photopea</strong>. The layout features stylish dress models, elegant typography, and a soft pink fabric background, effectively promoting a limited-time discount and encouraging customers to shop online.</p>
+      <button onclick="toggleImage(this)">View My Work</button>
+      <img src="images/Photopea.png" alt="Fashion Flyer" class="project-image hidden-img">
+    </div>
+
+
+    <div class="project-block-item">
+      <h3>PhotoResistor (Tinkercad)</h3>
+      <p>This circuit simulates an automatic light detection system using <strong>Tinkercad</strong>. It features an Arduino Uno, a photoresistor (LDR), and two LEDs that respond to ambient light levels—automatically turning on the red or green LED based on brightness.</p>
+      <button onclick="toggleImage(this)">View My Work</button>
+      <img src="images/Tinkercad.png" class="project-image hidden-img">
+    </div>
+
+
+  </div>
+</section>
+
+
+<section id="contact" class="hidden">
+  <h2 class="contact-title">Contact Me</h2>
+
+
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+
+
+
+  <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
+
+
+
+
+
+
+
+
+  <script>
+    function showSection(event, id) {
+      event.preventDefault();
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.classList.add("hidden"));
+
+
+
+
+
+
+
+
+      const target = document.getElementById(id);
+      if (target) target.classList.remove("hidden");
+
+
+
+
+
+
+
+
+      const links = document.querySelectorAll("nav a");
+      links.forEach(link => link.classList.remove("active"));
+      event.target.classList.add("active");
+    }
+
+
+ 
+  function toggleImage(button) {
+    const img = button.nextElementSibling;
+    img.classList.toggle("hidden-img");
+    button.textContent = img.classList.contains("hidden-img") ? "View My Work" : "Hide";
+  }
+
+
+
+
+
+
+    window.onscroll = function () {
+      const btn = document.getElementById("topBtn");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+
+
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
